@@ -1,22 +1,23 @@
-import React, { Component } from "react";
-import Header from "./components/Header";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import resumeData from "./resumeData";
-class App extends Component {
-  render() {
-    return (
-      <div className= "App">
-        <Header resumeData={resumeData}/>
-        <About resumeData={resumeData}/>
-        <Projects resumeData={resumeData}/>
-        <Contact resumeData={resumeData}/>
-        <Footer resumeData={resumeData}/>
-      </div>
-    );
+
+import React, { useState, useEffect } from 'react';
+import Pages from './pages';
+
+function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    // NOTE: Use your username below
+    fetch('https://github.com/jonelleadona')
+      .then(res => res.json())
+      .then(user => {
+        setUser(user);
+      });
+  }, []);
+
+  if (!user) {
+    return <div />;
   }
+
+  return <Pages user={user} />;
 }
 
 export default App;
