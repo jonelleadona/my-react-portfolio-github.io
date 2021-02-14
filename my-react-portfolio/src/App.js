@@ -6,7 +6,7 @@ function App() {
   const [user, setUser] = useState(null);
   useEffect(() => {
     // NOTE: Use your username below
-    fetch('https://github.com/jonelleadona')
+    fetch('https://github.com/jonelleadonag')
       .then(res => res.json())
       .then(user => {
         setUser(user);
