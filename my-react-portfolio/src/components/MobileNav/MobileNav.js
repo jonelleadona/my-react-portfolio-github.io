@@ -3,7 +3,7 @@ import { User32, Code32, Portfolio32, Education32 } from '@carbon/icons-react'
 
 import { Container, Spacer, NavWrapper, NavButton, NavLink } from './styles'
 
-const Nav = () => {
+const MobileNav = () => {
   return (
     <Container>
       <Spacer />
@@ -45,4 +45,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default MobileNav;

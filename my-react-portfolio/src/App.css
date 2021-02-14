@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+@import '@carbon/themes/scss/themes';
+/* carbon--theme: carbon--theme--g100; */
+@include carbon--theme();
+
+@import 'carbon-components/scss/globals/scss/styles.scss';
+
+a {
+  color: text-04;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bx--side-nav__navigation {
+  background-color: ui-background;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a.bx--side-nav__link--current,
+a.bx--side-nav__link--current > span.bx--side-nav__link-text {
+  background-color: ui-01;
+  color: text-04;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bx--side-nav__item:not(.bx--side-nav__item--active)
+  > .bx--side-nav__link:hover {
+  background-color: ui-01;
+  color: text-04;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a.bx--side-nav__link > .bx--side-nav__link-text,
+.bx--side-nav__item:not(.bx--side-nav__item--active)
+  > .bx--side-nav__link:hover
+  > span {
+  color: text-04;
 }
